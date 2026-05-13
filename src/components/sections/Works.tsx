@@ -1,32 +1,33 @@
 import { Code2, Music } from 'lucide-react'
+import type { Dictionary } from '@/dictionaries'
 
-export default function WorksSection(): React.ReactNode {
+export default function WorksSection({ dict }: { dict: Dictionary['works'] }): React.ReactNode {
   const works = [
     {
-      title: 'AI Agent Workflow Builder',
+      title: dict.items.agent.title,
       category: 'IT / Dev',
-      description: 'LLMを用いた自律型ワークフローをGUIで構築・管理する社内ツール。',
+      description: dict.items.agent.desc,
       tags: ['Python', 'React', 'AI'],
       icon: <Code2 className="text-blue-500" size={24} />,
     },
     {
-      title: 'Piascore 楽譜出版',
+      title: dict.items.score.title,
       category: 'Music',
-      description: 'ピアノ・ベース向けのアレンジスコアを制作し、Piascoreにて累計500部以上を販売。',
+      description: dict.items.score.desc,
       tags: ['Dorico', 'Sibelius', 'Score'],
       icon: <Music className="text-purple-500" size={24} />,
     },
     {
-      title: 'Automation CLI',
+      title: dict.items.tool.title,
       category: 'IT / Dev',
-      description: '日々の定型業務を自動化するC#製のコマンドラインツール群。',
+      description: dict.items.tool.desc,
       tags: ['C#', 'CLI', 'Automation'],
       icon: <Code2 className="text-blue-500" size={24} />,
     },
     {
-      title: 'Original EP Production',
+      title: dict.items.ep.title,
       category: 'Music',
-      description: '作詞・作曲からミックスまで自身で手掛けたインストゥルメンタルEP。',
+      description: dict.items.ep.desc,
       tags: ['Cubase', 'Bass', 'Keys'],
       icon: <Music className="text-purple-500" size={24} />,
     },
@@ -38,12 +39,10 @@ export default function WorksSection(): React.ReactNode {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
-              Selected Works
+              {dict.title}
             </span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            エンジニアリングと音楽制作、両軸での活動実績。
-          </p>
+          <p className="text-gray-600 dark:text-gray-400">{dict.desc}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">

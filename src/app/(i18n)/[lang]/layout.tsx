@@ -1,15 +1,22 @@
 import type { Metadata } from 'next'
-import './globals.css'
+import '@/app/globals.css'
+import { Locale } from '@/dictionaries'
 
 export const metadata: Metadata = {
   title: 'Taito Amemiya | IT Engineer & Musician',
   description: 'Portfolio of Taito Amemiya - IT Engineer and Musician.',
 }
 
+export function generateStaticParams(): { lang: string }[] {
+  return [{ lang: 'ja' }, { lang: 'en' }]
+}
+
 export default function RootLayout({
   children,
+  params: _params,
 }: Readonly<{
   children: React.ReactNode
+  params: Promise<{ lang: Locale }>
 }>): React.ReactNode {
   return (
     <html lang="ja" className="scroll-smooth antialiased">

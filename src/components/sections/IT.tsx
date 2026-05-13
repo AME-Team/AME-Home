@@ -1,25 +1,26 @@
 import { Terminal, Settings, Server, Bot } from 'lucide-react'
+import type { Dictionary } from '@/dictionaries'
 
-export default function ITSection(): React.ReactNode {
+export default function ITSection({ dict }: { dict: Dictionary['it'] }): React.ReactNode {
   const skills = [
     {
       name: 'C# / .NET',
-      description: 'デスクトップからバックエンドまで、堅牢なシステム開発。',
+      description: dict.items.desktop,
       icon: <Terminal className="text-blue-500" />,
     },
     {
       name: 'Python',
-      description: 'データ処理、スクレイピング、AI連携スクリプトの実装。',
+      description: dict.items.data,
       icon: <Server className="text-yellow-500" />,
     },
     {
       name: 'AI Agent',
-      description: 'LLMを活用した自律型エージェント開発やワークフロー構築。',
+      description: dict.items.ai,
       icon: <Bot className="text-green-500" />,
     },
     {
       name: 'Automation',
-      description: 'CI/CDパイプライン構築、業務効率化ツール開発。',
+      description: dict.items.ci,
       icon: <Settings className="text-gray-500" />,
     },
   ]
@@ -29,11 +30,9 @@ export default function ITSection(): React.ReactNode {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-            <span className="text-blue-500">IT Engineering</span>
+            <span className="text-blue-500">{dict.title}</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            10年目のエンジニアリング・リーダーとしての専門性。要件定義からアーキテクチャ設計、実装、運用までを一気通貫で担います。
-          </p>
+          <p className="text-gray-600 dark:text-gray-400">{dict.desc}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
