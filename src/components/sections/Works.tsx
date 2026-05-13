@@ -34,39 +34,39 @@ export default function WorksSection({ dict }: { dict: Dictionary['works'] }): R
   ]
 
   return (
-    <section id="works" className="py-24 bg-gray-50 dark:bg-gray-900/50">
+    <section id="works" className="bg-gray-50 py-24 dark:bg-gray-900/50">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+            <span className="bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
               {dict.title}
             </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400">{dict.desc}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
           {works.map((work, index) => (
             <div
               key={index}
-              className="group relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:-translate-y-1 transition-transform duration-300 shadow-sm hover:shadow-xl"
+              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-800 dark:bg-gray-900"
             >
               <div className="p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl">{work.icon}</div>
-                  <span className="text-xs font-semibold px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-600 dark:text-gray-300">
+                <div className="mb-4 flex items-start justify-between">
+                  <div className="rounded-xl bg-gray-50 p-3 dark:bg-gray-800">{work.icon}</div>
+                  <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600 dark:bg-gray-800 dark:text-gray-300">
                     {work.category}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-500 dark:group-hover:text-purple-400 transition-colors">
+                <h3 className="mb-3 text-2xl font-bold transition-colors group-hover:text-blue-500 dark:group-hover:text-purple-400">
                   {work.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">{work.description}</p>
+                <p className="mb-6 text-gray-600 dark:text-gray-400">{work.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {work.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="text-xs font-medium px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded"
+                      className="rounded bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400"
                     >
                       {tag}
                     </span>
