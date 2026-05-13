@@ -1,14 +1,17 @@
-import { defineConfig, globalIgnores } from 'eslint/config'
-import nextVitals from 'eslint-config-next/core-web-vitals'
-import nextTs from 'eslint-config-next/typescript'
+import { FlatCompat } from '@eslint/eslintrc'
 import tseslint from 'typescript-eslint'
 import prettierPlugin from 'eslint-plugin-prettier'
 import prettierConfig from 'eslint-config-prettier'
 
-export default defineConfig([
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'node_modules/**']),
-  ...nextVitals,
-  ...nextTs,
+const compat = new FlatCompat({
+  baseDirectory: import.meta.dirname,
+})
+
+export default tseslint.config(
+  {
+    ignores: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'node_modules/**'],
+  },
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
   prettierConfig,
@@ -49,7 +52,6 @@ export default defineConfig([
       '@typescript-eslint/prefer-optional-chain': 'error',
       '@typescript-eslint/no-confusing-void-expression': 'error',
       '@typescript-eslint/no-unsafe-type-assertion': 'error',
-      // Disable Next.js strict rule for missing React import if needed, but App router handles it.
     },
   },
-])
+)
