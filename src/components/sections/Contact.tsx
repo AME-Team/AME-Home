@@ -1,16 +1,15 @@
 import { Mail, Globe, MessageSquare, ArrowRight } from 'lucide-react'
+import type { Dictionary } from '@/dictionaries'
 
-export default function ContactSection(): React.ReactNode {
+export default function ContactSection({ dict }: { dict: Dictionary['contact'] }): React.ReactNode {
   return (
     <section id="contact" className="py-24 bg-gray-50 dark:bg-gray-900/50 relative overflow-hidden">
       <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-            <span className="text-red-500">Contact</span>
+            <span className="text-red-500">{dict.title}</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            プロジェクトのご相談、音楽制作の依頼、その他のお問い合わせはこちらから。
-          </p>
+          <p className="text-gray-600 dark:text-gray-400">{dict.desc}</p>
         </div>
 
         <div className="max-w-xl mx-auto bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-800">
@@ -25,7 +24,7 @@ export default function ContactSection(): React.ReactNode {
                 </div>
                 <div className="text-left">
                   <h3 className="font-bold">Email</h3>
-                  <p className="text-sm opacity-80">直接メールで連絡する</p>
+                  <p className="text-sm opacity-80">{dict.email}</p>
                 </div>
               </div>
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -48,9 +47,7 @@ export default function ContactSection(): React.ReactNode {
               </a>
             </div>
 
-            <p className="text-xs text-center text-gray-500 mt-6">
-              ※ 現在ダミーリンクです。適宜Googleフォーム等へのリンクに差し替えてご使用ください。
-            </p>
+            <p className="text-xs text-center text-gray-500 mt-6">{dict.note}</p>
           </div>
         </div>
       </div>

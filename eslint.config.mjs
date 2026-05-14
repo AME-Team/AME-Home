@@ -2,6 +2,7 @@ import { FlatCompat } from '@eslint/eslintrc'
 import tseslint from 'typescript-eslint'
 import prettierPlugin from 'eslint-plugin-prettier'
 import prettierConfig from 'eslint-config-prettier'
+import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -52,6 +53,17 @@ export default tseslint.config(
       '@typescript-eslint/prefer-optional-chain': 'error',
       '@typescript-eslint/no-confusing-void-expression': 'error',
       '@typescript-eslint/no-unsafe-type-assertion': 'error',
+    },
+  },
+  {
+    files: ['src/**/*.{tsx,jsx}'],
+    plugins: {
+      tailwindcss: tailwindcssPlugin,
+    },
+    rules: {
+      'tailwindcss/classnames-order': 'off',
+      'tailwindcss/no-custom-classname': 'off',
+      'tailwindcss/migration-from-tailwind-2': 'error',
     },
   },
 )

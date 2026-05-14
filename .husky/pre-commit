@@ -1,5 +1,5 @@
-
-
-
+#!/bin/sh
 npx lint-staged
 npm run typecheck
+npm run format:check
+npm run lint:strict
