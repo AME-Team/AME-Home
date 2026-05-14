@@ -11,15 +11,16 @@ export function generateStaticParams(): { lang: string }[] {
   return [{ lang: 'ja' }, { lang: 'en' }]
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: _params,
+  params,
 }: Readonly<{
   children: React.ReactNode
   params: Promise<{ lang: Locale }>
-}>): React.ReactNode {
+}>): Promise<React.ReactNode> {
+  const { lang } = await params
   return (
-    <html lang="ja" className="scroll-smooth antialiased">
+    <html lang={lang} className="scroll-smooth antialiased">
       <body className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden font-sans">
         {children}
       </body>

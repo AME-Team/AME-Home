@@ -2,10 +2,8 @@ import { Code2, Music } from 'lucide-react'
 import type { Locale } from '@/dictionaries'
 import { getMessage } from '@/dictionaries'
 
-export default function Hero({ locale }: { locale: string }): React.ReactNode {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
-  const typedLocale = locale as Locale
-  const message = getMessage(typedLocale, 'hero.message')
+export default function Hero({ locale }: { locale: Locale }): React.ReactNode {
+  const message = getMessage(locale, 'hero.message')
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16">
@@ -22,7 +20,7 @@ export default function Hero({ locale }: { locale: string }): React.ReactNode {
           </span>
         </h1>
         <p className="mb-12 text-xl font-medium text-gray-600 md:text-2xl dark:text-gray-300">
-          {getMessage(typedLocale, 'hero.subtitle')}
+          {getMessage(locale, 'hero.subtitle')}
         </p>
 
         <div className="flex flex-col justify-center gap-6 sm:flex-row">
@@ -31,14 +29,14 @@ export default function Hero({ locale }: { locale: string }): React.ReactNode {
             className="group flex items-center justify-center gap-3 rounded-full border border-blue-500/30 bg-blue-500/10 px-8 py-4 text-blue-600 transition-all hover:bg-blue-500/20 dark:text-blue-400"
           >
             <Code2 />
-            <span className="font-semibold">{getMessage(typedLocale, 'hero.btn_it')}</span>
+            <span className="font-semibold">{getMessage(locale, 'hero.btn_it')}</span>
           </a>
           <a
             href="#music"
             className="group flex items-center justify-center gap-3 rounded-full border border-purple-500/30 bg-purple-500/10 px-8 py-4 text-purple-600 transition-all hover:bg-purple-500/20 dark:text-purple-400"
           >
             <Music />
-            <span className="font-semibold">{getMessage(typedLocale, 'hero.btn_music')}</span>
+            <span className="font-semibold">{getMessage(locale, 'hero.btn_music')}</span>
           </a>
         </div>
       </div>
