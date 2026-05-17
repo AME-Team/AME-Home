@@ -1,4 +1,4 @@
-import { Mail, Globe, MessageSquare, ArrowRight } from 'lucide-react'
+import { Mail, ArrowRight } from 'lucide-react'
 import type { Dictionary } from '@/dictionaries'
 
 export default function ContactSection({ dict }: { dict: Dictionary['contact'] }): React.ReactNode {
@@ -27,23 +27,6 @@ export default function ContactSection({ dict }: { dict: Dictionary['contact'] }
               </div>
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </a>
-
-            <div className="flex justify-center gap-6 pt-4 border-t border-border">
-              <a
-                href="#"
-                className="p-3 rounded bg-gray-100 hover:bg-gray-200 text-muted transition-colors"
-              >
-                <Globe size={24} />
-                <span className="sr-only">Website</span>
-              </a>
-              <a
-                href="#"
-                className="p-3 rounded bg-gray-100 hover:bg-gray-200 text-muted transition-colors"
-              >
-                <MessageSquare size={24} />
-                <span className="sr-only">Social Media</span>
-              </a>
-            </div>
 
             <p className="text-xs text-center text-muted mt-6">{dict.note}</p>
           </div>
