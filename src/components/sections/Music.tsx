@@ -1,53 +1,55 @@
-import { Piano, Headphones, BookOpen, Mic2 } from 'lucide-react'
+import { BookOpen, ExternalLink } from 'lucide-react'
 import type { Dictionary } from '@/dictionaries'
 
 export default function MusicSection({ dict }: { dict: Dictionary['music'] }): React.ReactNode {
-  const skills = [
+  const links = [
     {
-      name: 'Bassist / Keyboardist',
-      description: dict.items.play,
-      icon: <Piano className="text-purple-500" />,
+      name: 'Piascore',
+      url: 'https://store.piascore.com/search?c=9496',
+      description: dict.items.piascore,
     },
     {
-      name: 'Score Publishing',
-      description: dict.items.score,
-      icon: <BookOpen className="text-pink-500" />,
-    },
-    {
-      name: 'Notation Software',
-      description: dict.items.engrave,
-      icon: <Mic2 className="text-indigo-500" />,
-    },
-    {
-      name: 'DAW & Production',
-      description: dict.items.compose,
-      icon: <Headphones className="text-fuchsia-500" />,
+      name: 'YouTube',
+      url: 'https://www.youtube.com/@tarminj1545',
+      description: dict.items.youtube,
     },
   ]
 
   return (
-    <section id="music" className="py-24 bg-white dark:bg-black">
+    <section id="music" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-            <span className="text-purple-500">{dict.title}</span>
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400">{dict.desc}</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy">{dict.title}</h2>
+          <p className="text-muted">{dict.desc}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">{skill.icon}</div>
-                <h3 className="text-xl font-bold">{skill.name}</h3>
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-3 bg-section-alt rounded">
+                <BookOpen className="text-navy" size={24} />
               </div>
-              <p className="text-gray-600 dark:text-gray-400">{skill.description}</p>
+              <h3 className="text-xl font-bold text-navy">{dict.sheetMusicTitle}</h3>
             </div>
-          ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {links.map((link, index) => (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-white p-6 rounded border border-border hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="text-lg font-bold text-navy">{link.name}</h4>
+                  <ExternalLink className="text-muted" size={20} />
+                </div>
+                <p className="text-muted">{link.description}</p>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
