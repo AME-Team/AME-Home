@@ -33,28 +33,6 @@
       "youtube": "Publishing music content on YouTube."
     }
   },
-  "works": {
-    "title": "Selected Works",
-    "desc": "A track record of activities in both engineering and music production.",
-    "items": {
-      "agent": {
-        "title": "AI Agent Platform",
-        "desc": "An internal tool to build and manage autonomous LLM workflows via GUI."
-      },
-      "score": {
-        "title": "Score Publishing",
-        "desc": "Produced arranged scores for piano and bass, selling over 500 copies cumulatively on Piascore."
-      },
-      "tool": {
-        "title": "Internal CLI Tools",
-        "desc": "C#-based command-line tools to automate daily routine tasks."
-      },
-      "ep": {
-        "title": "Original EP Release",
-        "desc": "An instrumental EP independently produced from songwriting and composition to mixing."
-      }
-    }
-  },
   "contact": {
     "title": "Contact",
     "desc": "For project consultations, music production requests, and other inquiries, please contact me here.",
