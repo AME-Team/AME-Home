@@ -1,4 +1,4 @@
-import { Code2, Music, User, Briefcase, Mail } from 'lucide-react'
+import { Code2, Music, User, Mail } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Header({ lang = 'ja' }: { lang?: string }): React.ReactNode {
@@ -18,12 +18,6 @@ export default function Header({ lang = 'ja' }: { lang?: string }): React.ReactN
               className="hover:text-navy transition-colors flex items-center gap-2"
             >
               <Music size={16} /> Music
-            </Link>
-            <Link
-              href="#works"
-              className="hover:text-navy transition-colors flex items-center gap-2"
-            >
-              <Briefcase size={16} /> Works
             </Link>
             <Link
               href="#about"
