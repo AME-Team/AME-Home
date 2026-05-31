@@ -9,14 +9,15 @@
   "about": {
     "title": "About Me",
     "name": "Taito Amemiya",
-    "p1": "With a 10-year career as an IT engineer, I currently lead projects and teams. I tackle business challenges across a wide range of technological domains, from requirements definition to implementation and AI utilization.",
-    "p2": "At the same time, I am a bassist and keyboardist, running a sole proprietorship for music production, music engraving, and score publishing (Piascore).",
-    "p3": "\"Logical Engineering\" and \"Expressive Music\". By crossing these seemingly distinct worlds and mutually leveraging their insights, I continue to create unique value."
+    "p1": "I have a 13-year career as an IT engineer.",
+    "p2": "My hobbies are piano and bass, and I recently started selling sheet music.",
+    "p3": ""
   },
   "it": {
     "title": "IT Engineer",
     "desc": "Open-source applications and libraries published on GitHub.",
     "github": "GitHub Account",
+    "atcoder": "AtCoder Account",
     "appsTitle": "Applications",
     "items": {
       "ameCompression": "File compression utility.",
