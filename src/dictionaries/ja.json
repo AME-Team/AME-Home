@@ -17,6 +17,7 @@
     "title": "ITエンジニア",
     "desc": "開発したアプリケーションやライブラリを公開しています。",
     "github": "GitHubアカウント",
+    "atcoder": "AtCoderアカウント",
     "appsTitle": "Applications",
     "items": {
       "ameCompression": "ファイル圧縮ユーティリティ。",

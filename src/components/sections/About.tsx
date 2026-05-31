@@ -1,4 +1,5 @@
-import { MapPin, Briefcase, User as UserIcon } from 'lucide-react'
+import { MapPin, Briefcase } from 'lucide-react'
+import Image from 'next/image'
 import type { Dictionary } from '@/dictionaries'
 
 export default function AboutSection({ dict }: { dict: Dictionary['about'] }): React.ReactNode {
@@ -12,8 +13,14 @@ export default function AboutSection({ dict }: { dict: Dictionary['about'] }): R
 
           <div className="rounded-lg border border-border bg-white p-8 md:p-12">
             <div className="flex flex-col items-center gap-12 md:flex-row md:items-start">
-              <div className="flex h-40 w-40 shrink-0 items-center justify-center rounded bg-navy text-white">
-                <UserIcon size={72} className="opacity-80" />
+              <div className="flex h-40 w-40 shrink-0 items-center justify-center overflow-hidden rounded bg-navy text-white">
+                <Image
+                  src="/avatar.jpg"
+                  alt="Taito Amemiya Avatar"
+                  width={160}
+                  height={160}
+                  className="h-full w-full object-cover"
+                />
               </div>
 
               <div className="flex-1 space-y-6">

@@ -1,12 +1,17 @@
 import { Code2, Music, User, Mail } from 'lucide-react'
 import Link from 'next/link'
+import Logo from './Logo'
 
 export default function Header({ lang = 'ja' }: { lang?: string }): React.ReactNode {
   return (
     <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href={`/${lang}`} className="text-xl font-bold tracking-tight text-navy">
-          Taito Amemiya
+        <Link
+          href={`/${lang}`}
+          className="flex items-center gap-2 text-xl font-bold tracking-tight text-navy"
+        >
+          <Logo />
+          <span>Taito Amemiya</span>
         </Link>
         <div className="flex items-center gap-6">
           <nav className="hidden md:flex gap-6 text-sm font-medium text-muted">

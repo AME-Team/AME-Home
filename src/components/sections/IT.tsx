@@ -1,5 +1,6 @@
 import { Github, ExternalLink } from 'lucide-react'
 import type { Dictionary } from '@/dictionaries'
+import AtCoderStats from './AtCoderStats'
 
 export default function ITSection({ dict }: { dict: Dictionary['it'] }): React.ReactNode {
   const apps = [
@@ -44,6 +45,8 @@ export default function ITSection({ dict }: { dict: Dictionary['it'] }): React.R
             </div>
             <ExternalLink className="text-muted" size={20} />
           </a>
+
+          <AtCoderStats title={dict.atcoder || 'AtCoder アカウント'} />
 
           <div>
             <h3 className="text-xl font-bold text-navy mb-4">{dict.appsTitle}</h3>

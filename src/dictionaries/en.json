@@ -17,6 +17,7 @@
     "title": "IT Engineer",
     "desc": "Open-source applications and libraries published on GitHub.",
     "github": "GitHub Account",
+    "atcoder": "AtCoder Account",
     "appsTitle": "Applications",
     "items": {
       "ameCompression": "File compression utility.",
