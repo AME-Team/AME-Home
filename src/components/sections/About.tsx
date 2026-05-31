@@ -33,9 +33,9 @@ export default function AboutSection({ dict }: { dict: Dictionary['about'] }): R
                 </div>
 
                 <div className="space-y-4 leading-relaxed text-muted">
-                  <p>{dict.p1}</p>
-                  <p>{dict.p2}</p>
-                  <p>{dict.p3}</p>
+                  {dict.p1 && <p>{dict.p1}</p>}
+                  {dict.p2 && <p>{dict.p2}</p>}
+                  {dict.p3 && <p>{dict.p3}</p>}
                 </div>
               </div>
             </div>
