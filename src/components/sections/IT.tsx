@@ -1,4 +1,5 @@
 import { Github, ExternalLink } from 'lucide-react'
+import { Suspense } from 'react'
 import type { Dictionary } from '@/dictionaries'
 import AtCoderStats from './AtCoderStats'
 
@@ -46,7 +47,11 @@ export default function ITSection({ dict }: { dict: Dictionary['it'] }): React.R
             <ExternalLink className="text-muted" size={20} />
           </a>
 
-          <AtCoderStats title={dict.atcoder || 'AtCoder アカウント'} />
+          <Suspense
+            fallback={<div className="h-24 animate-pulse rounded border border-border bg-white" />}
+          >
+            <AtCoderStats title={dict.atcoder || 'AtCoder アカウント'} />
+          </Suspense>
 
           <div>
             <h3 className="text-xl font-bold text-navy mb-4">{dict.appsTitle}</h3>
