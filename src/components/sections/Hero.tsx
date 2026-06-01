@@ -6,7 +6,10 @@ export default function Hero({ locale }: { locale: Locale }): React.ReactNode {
   const message = getMessage(locale, 'hero.message')
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center pt-16 bg-navy">
+    <section
+      className="relative flex min-h-screen items-center justify-center pt-16 bg-navy bg-cover bg-center"
+      style={{ backgroundImage: "url('/hero-bg.svg')" }}
+    >
       <div className="container mx-auto px-4 text-center">
         <h1 className="mb-6 text-5xl font-extrabold tracking-tight text-white md:text-7xl">
           {message}
