@@ -30,11 +30,11 @@
   "music": {
     "title": "楽譜",
     "platform": "Piascore",
-    "description": "Piascore で楽譜を販売しています。アレンジ、譜面の浄書、演奏動画の作成まで自分で行っています。",
+    "description": "Piascore で楽譜を販売しています。",
     "storeLink": "Piascore で一覧を見る",
     "channelLink": "YouTube チャンネル",
     "buy": "Piascore で見る",
-    "video": "演奏動画",
+    "video": "デモ演奏",
     "new": "NEW",
     "formats": {
       "band": "バンドスコア",
@@ -43,12 +43,11 @@
     "difficulty": {
       "intermediate": "中級"
     },
-    "pages": "{count}ページ",
-    "note": "掲載内容は 2026年11月時点のものです。最新の情報は Piascore でご確認ください。"
+    "pages": "{count}ページ"
   },
   "software": {
     "title": "ソフトウェア",
-    "description": "GitHub で公開しているツールとライブラリです。AME-Team のリポジトリと、個人アカウントのものをまとめています。",
+    "description": "GitHub で公開しているツールとライブラリです。",
     "open": "GitHub で見る",
     "paused": "休止中",
     "items": {
@@ -82,14 +81,14 @@
   },
   "about": {
     "title": "About",
-    "lead": "神奈川県川崎市を拠点に、IT エンジニアと音楽制作をしています。",
+    "lead": "神奈川県川崎市在住。IT エンジニアと音楽制作をしています。",
     "p1": "IT エンジニアとして13年ほど、業務システムの開発や開発基盤の整備に携わってきました。ここ数年は、個人で作ったツールを GitHub で公開しています。",
-    "p2": "音楽は趣味から始めました。ピアノとベースを弾いていて、2026年からアレンジ譜の制作・販売を行っています。譜面の浄書から演奏動画の編集まで、自分で担当しています。",
+    "p2": "音楽は趣味から始めました。ピアノとベースを弾いていて、2026年からアレンジ譜の制作・販売を行っています。",
     "p3": "このサイトは、公開しているものを一か所にまとめるために作りました。",
     "factsTitle": "基本情報",
     "facts": {
       "location": {
-        "label": "拠点",
+        "label": "在住",
         "value": "神奈川県川崎市"
       },
       "work": {
@@ -105,13 +104,6 @@
         "value": "Dorico / Python / TypeScript / Next.js"
       }
     }
-  },
-  "contact": {
-    "title": "連絡",
-    "description": "お仕事のご相談や楽譜についてのご質問は、X の DM、GitHub、Note からお願いします。",
-    "x": "X の DM",
-    "github": "GitHub",
-    "note": "Note"
   },
   "footer": {
     "tagline": "楽譜とソフトウェアの公開場所",

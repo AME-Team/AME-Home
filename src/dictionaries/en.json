@@ -30,11 +30,11 @@
   "music": {
     "title": "Sheet music",
     "platform": "Piascore",
-    "description": "I arrange, engrave, and publish scores on Piascore, with performance videos on YouTube.",
+    "description": "I publish sheet music on Piascore.",
     "storeLink": "See all on Piascore",
     "channelLink": "YouTube channel",
     "buy": "View on Piascore",
-    "video": "Performance video",
+    "video": "Demo performance",
     "new": "NEW",
     "formats": {
       "band": "Band score",
@@ -43,12 +43,11 @@
     "difficulty": {
       "intermediate": "Intermediate"
     },
-    "pages": "{count} pages",
-    "note": "This list reflects November 2026. Please check Piascore for the latest information."
+    "pages": "{count} pages"
   },
   "software": {
     "title": "Software",
-    "description": "Tools and libraries published on GitHub, from the AME-Team organization and my personal account.",
+    "description": "Tools and libraries published on GitHub.",
     "open": "View on GitHub",
     "paused": "Paused",
     "items": {
@@ -82,14 +81,14 @@
   },
   "about": {
     "title": "About",
-    "lead": "I work as an IT engineer and make music, based in Kawasaki, Kanagawa.",
+    "lead": "I live in Kawasaki, Kanagawa. I work as an IT engineer and also make music.",
     "p1": "I have spent about 13 years as an IT engineer, working on business systems and development infrastructure. In recent years I have been publishing the tools I build on GitHub.",
-    "p2": "Music started as a hobby, through piano and bass. Since 2026 I have been arranging and selling scores, handling everything from engraving to the performance videos.",
+    "p2": "Music started as a hobby, through piano and bass. Since 2026 I have been arranging and selling scores.",
     "p3": "This site exists to keep the things I publish in one place.",
     "factsTitle": "At a glance",
     "facts": {
       "location": {
-        "label": "Based in",
+        "label": "Lives in",
         "value": "Kawasaki, Kanagawa"
       },
       "work": {
@@ -105,13 +104,6 @@
         "value": "Dorico / Python / TypeScript / Next.js"
       }
     }
-  },
-  "contact": {
-    "title": "Contact",
-    "description": "For work inquiries or questions about the scores, please reach me on X, GitHub, or Note.",
-    "x": "X DM",
-    "github": "GitHub",
-    "note": "Note"
   },
   "footer": {
     "tagline": "Sheet music and software, kept in one place",

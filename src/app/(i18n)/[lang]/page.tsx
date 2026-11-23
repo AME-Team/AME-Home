@@ -5,7 +5,6 @@ import MusicSection from '@/components/sections/Music'
 import SoftwareSection from '@/components/sections/Software'
 import WritingSection from '@/components/sections/Writing'
 import AboutSection from '@/components/sections/About'
-import ContactSection from '@/components/sections/Contact'
 import { getDictionary, type Locale } from '@/dictionaries'
 
 export default async function Home({
@@ -31,7 +30,6 @@ export default async function Home({
         <SoftwareSection lang={lang} dict={dict.software} />
         <WritingSection lang={lang} dict={dict.writing} />
         <AboutSection dict={dict.about} />
-        <ContactSection dict={dict.contact} />
       </main>
       <Footer lang={lang} dict={dict} />
     </>

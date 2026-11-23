@@ -37,7 +37,7 @@ npm run build
 
 - `src/app/(i18n)/[lang]/`: ページ本体（`ja` / `en`）
 - `src/components/layout/`: Header / Footer / Section / Logo
-- `src/components/sections/`: Hero / Music / Software / AtCoderStatus / Writing / About / Contact
+- `src/components/sections/`: Hero / Music / Software / AtCoderStatus / Writing / About
 - `src/components/theme/`: ライト・ダーク・システムのテーマ切替
 - `src/data/site.ts`: 楽譜・リポジトリ・記事・外部リンクの一覧（更新はここ）
 - `src/dictionaries/`: 日本語・英語の文言

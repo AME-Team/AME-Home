@@ -96,8 +96,7 @@ export default function MusicSection({
         ))}
       </div>
 
-      <div className="mt-8 flex flex-col gap-3 text-xs text-gray-500 sm:flex-row sm:items-center sm:justify-between dark:text-gray-400">
-        <p>{dict.note}</p>
+      <div className="mt-8 flex justify-end text-xs text-gray-500 dark:text-gray-400">
         <a
           href={LINKS.youtube}
           target="_blank"
