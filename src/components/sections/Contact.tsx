@@ -1,37 +1,43 @@
-import { Mail, ArrowRight } from 'lucide-react'
+import { ArrowUpRight, FileText, Github, MessageCircle } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import type { Dictionary } from '@/dictionaries'
+import { LINKS } from '@/data/site'
+import Section from '../layout/Section'
+
+interface ContactLink {
+  href: string
+  label: string
+  Icon: LucideIcon
+}
 
 export default function ContactSection({ dict }: { dict: Dictionary['contact'] }): React.ReactNode {
+  const links: ContactLink[] = [
+    { href: LINKS.x, label: dict.x, Icon: MessageCircle },
+    { href: LINKS.github, label: dict.github, Icon: Github },
+    { href: LINKS.note, label: dict.note, Icon: FileText },
+  ]
+
   return (
-    <section id="contact" className="py-24 bg-section-alt">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy">{dict.title}</h2>
-          <p className="text-muted">{dict.desc}</p>
-        </div>
-
-        <div className="max-w-xl mx-auto bg-white rounded-lg p-8 border border-border">
-          <div className="space-y-8">
-            <a
-              href="mailto:contact@example.com"
-              className="flex items-center justify-between p-4 rounded bg-gray-50 hover:bg-gray-100 text-navy transition-colors group"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-navy text-white rounded">
-                  <Mail />
-                </div>
-                <div className="text-left">
-                  <h3 className="font-bold">Email</h3>
-                  <p className="text-sm text-muted">{dict.email}</p>
-                </div>
-              </div>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </a>
-
-            <p className="text-xs text-center text-muted mt-6">{dict.note}</p>
-          </div>
-        </div>
+    <Section id="contact" title={dict.title} description={dict.description}>
+      <div className="grid gap-6 sm:grid-cols-3">
+        {links.map(({ href, label, Icon }) => (
+          <a
+            key={href}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between gap-4 rounded-lg border border-gray-200 bg-white p-6 transition-colors duration-150 ease-out hover:border-primary-border dark:border-gray-700 dark:bg-gray-800"
+          >
+            <span className="flex items-center gap-3">
+              <Icon className="size-5 text-primary" aria-hidden="true" />
+              <span className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+                {label}
+              </span>
+            </span>
+            <ArrowUpRight className="size-4 text-gray-400 dark:text-gray-500" aria-hidden="true" />
+          </a>
+        ))}
       </div>
-    </section>
+    </Section>
   )
 }

@@ -1,54 +1,34 @@
-import { MapPin, Briefcase } from 'lucide-react'
-import Image from 'next/image'
 import type { Dictionary } from '@/dictionaries'
+import Section from '../layout/Section'
 
 export default function AboutSection({ dict }: { dict: Dictionary['about'] }): React.ReactNode {
+  const facts = Object.values(dict.facts)
+
   return (
-    <section id="about" className="bg-white py-24">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-4xl">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-navy md:text-4xl">{dict.title}</h2>
-          </div>
+    <Section id="about" title={dict.title} description={dict.lead}>
+      <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div className="space-y-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+          <p>{dict.p1}</p>
+          <p>{dict.p2}</p>
+          <p>{dict.p3}</p>
+        </div>
 
-          <div className="rounded-lg border border-border bg-white p-8 md:p-12">
-            <div className="flex flex-col items-center gap-12 md:flex-row md:items-start">
-              <div className="flex h-40 w-40 shrink-0 items-center justify-center overflow-hidden rounded bg-navy text-white">
-                <Image
-                  src="/avatar.jpg"
-                  alt="Taito Amemiya Avatar"
-                  width={160}
-                  height={160}
-                  className="h-full w-full object-cover"
-                />
+        <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+          <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+            {dict.factsTitle}
+          </h3>
+          <dl className="mt-4 space-y-4">
+            {facts.map((fact) => (
+              <div key={fact.label}>
+                <dt className="text-xs text-gray-600 dark:text-gray-400">{fact.label}</dt>
+                <dd className="mt-1 text-sm font-medium text-gray-900 dark:text-gray-100">
+                  {fact.value}
+                </dd>
               </div>
-
-              <div className="flex-1 space-y-6">
-                <div>
-                  <h3 className="mb-2 text-2xl font-bold text-navy">
-                    {dict.name}{' '}
-                    <span className="text-lg font-normal text-muted">/ Taito Amemiya</span>
-                  </h3>
-                  <div className="flex flex-wrap gap-4 text-sm font-medium text-muted">
-                    <span className="flex items-center gap-1.5">
-                      <MapPin size={16} /> Tokyo / Kanagawa
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Briefcase size={16} /> Freelance Engineer & Musician
-                    </span>
-                  </div>
-                </div>
-
-                <div className="space-y-4 leading-relaxed text-muted">
-                  {dict.p1 && <p>{dict.p1}</p>}
-                  {dict.p2 && <p>{dict.p2}</p>}
-                  {dict.p3 && <p>{dict.p3}</p>}
-                </div>
-              </div>
-            </div>
-          </div>
+            ))}
+          </dl>
         </div>
       </div>
-    </section>
+    </Section>
   )
 }
