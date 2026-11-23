@@ -73,7 +73,7 @@
   },
   "writing": {
     "title": "記事",
-    "description": "調べたこと、試したこと、考えたことを Note と Qiita に書いています。記事は日本語です。",
+    "description": "調べたこと、試したこと、考えたことを Note と Qiita に書いています。",
     "noteLabel": "Note",
     "qiitaLabel": "Qiita",
     "noteLink": "Note の記事一覧へ",
