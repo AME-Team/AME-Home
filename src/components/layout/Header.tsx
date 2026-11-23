@@ -1,58 +1,74 @@
-import { Code2, Music, User, Mail } from 'lucide-react'
 import Link from 'next/link'
+import type { Dictionary, Locale } from '@/dictionaries'
+import { NAV_ITEMS } from './nav'
+import MobileNav from './MobileNav'
 import Logo from './Logo'
+import ThemeToggle from '../theme/ThemeToggle'
 
-export default function Header({ lang = 'ja' }: { lang?: string }): React.ReactNode {
+export default function Header({
+  lang,
+  dict,
+}: {
+  lang: Locale
+  dict: Dictionary
+}): React.ReactNode {
   return (
-    <header className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-40 border-b border-gray-200 bg-white/90 backdrop-blur dark:border-gray-800 dark:bg-gray-900/90">
+      <div className="relative mx-auto flex h-16 w-full max-w-5xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href={`/${lang}`}
-          className="flex items-center gap-2 text-xl font-bold tracking-tight text-navy"
+          className="flex items-center gap-2 text-base font-bold tracking-tight text-gray-900 dark:text-gray-100"
         >
-          <Logo />
-          <span>Taito Amemiya</span>
+          <Logo className="size-8" />
+          <span>AME</span>
         </Link>
-        <div className="flex items-center gap-6">
-          <nav className="hidden md:flex gap-6 text-sm font-medium text-muted">
-            <Link href="#it" className="hover:text-navy transition-colors flex items-center gap-2">
-              <Code2 size={16} /> IT
-            </Link>
-            <Link
-              href="#music"
-              className="hover:text-navy transition-colors flex items-center gap-2"
-            >
-              <Music size={16} /> Music
-            </Link>
-            <Link
-              href="#about"
-              className="hover:text-navy transition-colors flex items-center gap-2"
-            >
-              <User size={16} /> About
-            </Link>
-            <Link
-              href="#contact"
-              className="hover:text-navy transition-colors flex items-center gap-2"
-            >
-              <Mail size={16} /> Contact
-            </Link>
-          </nav>
 
-          <div className="flex items-center gap-2 text-sm font-semibold bg-gray-100 px-3 py-1.5 rounded">
+        <nav aria-label={dict.nav.sections} className="hidden items-center gap-1 md:flex">
+          {NAV_ITEMS.map(({ href, key, Icon }) => (
+            <Link
+              key={key}
+              href={href}
+              className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors duration-150 ease-out hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
+            >
+              <Icon className="size-4" aria-hidden="true" />
+              {dict.nav[key]}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <ThemeToggle labels={dict.theme} />
+
+          <div
+            role="group"
+            aria-label={dict.nav.language}
+            className="flex items-center gap-1 rounded-md bg-gray-100 p-1 text-xs font-semibold dark:bg-gray-800"
+          >
             <Link
               href="/ja"
-              className={`transition-colors ${lang === 'ja' ? 'text-navy' : 'text-gray-400 hover:text-gray-600'}`}
+              aria-current={lang === 'ja' ? 'page' : undefined}
+              className={`rounded-md px-2 py-2 transition-colors duration-150 ease-out ${
+                lang === 'ja'
+                  ? 'bg-white text-primary dark:bg-gray-900 dark:text-gray-100'
+                  : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100'
+              }`}
             >
               JA
             </Link>
-            <span className="text-gray-300">|</span>
             <Link
               href="/en"
-              className={`transition-colors ${lang === 'en' ? 'text-navy' : 'text-gray-400 hover:text-gray-600'}`}
+              aria-current={lang === 'en' ? 'page' : undefined}
+              className={`rounded-md px-2 py-2 transition-colors duration-150 ease-out ${
+                lang === 'en'
+                  ? 'bg-white text-primary dark:bg-gray-900 dark:text-gray-100'
+                  : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100'
+              }`}
             >
               EN
             </Link>
           </div>
+
+          <MobileNav dict={dict} />
         </div>
       </div>
     </header>

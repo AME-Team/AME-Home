@@ -1,19 +1,12 @@
-import type { ReactNode } from 'react'
-
-export default function Logo({ className = '' }: { className?: string }): ReactNode {
+export default function Logo({ className = 'size-8' }: { className?: string }): React.ReactNode {
   return (
-    <svg
-      width="32"
-      height="32"
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <rect width="32" height="32" rx="6" fill="#1A2A3A" />
+    <svg viewBox="0 0 32 32" role="img" aria-hidden="true" focusable="false" className={className}>
+      <rect width="32" height="32" rx="6" className="fill-primary" />
       <path
-        d="M16 8L8 24H11.5L13.5 19H18.5L20.5 24H24L16 8ZM16 12L17.5 16.5H14.5L16 12Z"
-        fill="white"
+        d="M16 8.5 23.5 23.5h-3.4l-1.3-2.9h-5.6l-1.3 2.9H8.5L16 8.5Zm0 5.1-1.5 3.9h3l-1.5-3.9Z"
+        fill="#ffffff"
+        fillRule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   )

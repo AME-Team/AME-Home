@@ -1,43 +1,123 @@
 {
+  "meta": {
+    "title": "AME — Sheet Music and Software",
+    "description": "Arranged sheet music on Piascore, software on GitHub. A place that collects what I publish."
+  },
+  "nav": {
+    "music": "Sheet music",
+    "software": "Software",
+    "writing": "Writing",
+    "about": "About",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "language": "Switch language",
+    "sections": "Sections",
+    "skip": "Skip to content"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
   "hero": {
-    "title": "Where Logic Meets Sensibility.",
-    "subtitle": "Structuring with technology, coloring with music.",
-    "btn_it": "Explore IT",
-    "btn_music": "Explore Music",
-    "message": "Where Logic Meets Sensibility."
-  },
-  "about": {
-    "title": "About Me",
-    "name": "Taito Amemiya",
-    "p1": "I have a 13-year career as an IT engineer.",
-    "p2": "My hobbies are piano and bass, and I recently started selling sheet music.",
-    "p3": ""
-  },
-  "it": {
-    "title": "IT Engineer",
-    "desc": "Open-source applications and libraries published on GitHub.",
-    "github": "GitHub Account",
-    "atcoder": "AtCoder Account",
-    "appsTitle": "Applications",
-    "items": {
-      "ameCompression": "File compression utility.",
-      "markdownDesign": "Markdown-based design tool.",
-      "tameAtCoder": "Algorithm library for competitive programming."
-    }
+    "title": "Sheet music and software.",
+    "description": "I sell my sheet music arrangements on Piascore and publish the tools I build on GitHub. This site keeps them in one place.",
+    "primaryCta": "Browse sheet music",
+    "secondaryCta": "View on GitHub",
+    "tertiaryCta": "Read the notes",
+    "recentTitle": "Recent activity"
   },
   "music": {
-    "title": "Music Activities",
-    "desc": "Sheet music sales and other musical works.",
-    "sheetMusicTitle": "Sheet Music Sales (AME Sheet Music)",
+    "title": "Sheet music",
+    "platform": "Piascore",
+    "description": "I arrange, engrave, and publish scores on Piascore, with performance videos on YouTube.",
+    "storeLink": "See all on Piascore",
+    "channelLink": "YouTube channel",
+    "buy": "View on Piascore",
+    "video": "Performance video",
+    "new": "NEW",
+    "formats": {
+      "band": "Band score",
+      "piano": "Piano (accompaniment)"
+    },
+    "difficulty": {
+      "intermediate": "Intermediate"
+    },
+    "pages": "{count} pages",
+    "note": "This list reflects November 2026. Please check Piascore for the latest information."
+  },
+  "software": {
+    "title": "Software",
+    "description": "Tools and libraries published on GitHub, from the AME-Team organization and my personal account.",
+    "open": "View on GitHub",
+    "paused": "Paused",
     "items": {
-      "piascore": "Selling sheet music on Piascore.",
-      "youtube": "Publishing music content on YouTube."
+      "aiReview": "A review foundation that runs static analysis and AI review on pull requests and pre-commit.",
+      "designSkills": "UI/UX and typography rules for TypeScript and Tailwind CSS, packaged as agent Skills.",
+      "agentChat": "A local development environment for using OpenCode from the browser.",
+      "aiSandbox": "A Docker sandbox for running Claude Code and OpenCode inside a container.",
+      "compression": "A video compression script built on FFmpeg.",
+      "notoFonts": "A script that replaces Windows system fonts with Noto Sans.",
+      "notation": "A transcription assistant that turns audio into scores and MIDI. Development is paused for now.",
+      "markdownDesign": "A CSS collection for Markdown Preview Enhanced and Marp.",
+      "atcoderLibrary": "The C# library I use on AtCoder."
+    },
+    "atcoder": {
+      "title": "AtCoder",
+      "description": "A record of competitive programming.",
+      "profile": "View profile",
+      "rating": "Rating",
+      "highest": "Highest",
+      "matches": "Rated contests",
+      "lastContest": "Last contest"
+    }
+  },
+  "writing": {
+    "title": "Writing",
+    "description": "Notes on what I looked into, tried, and thought about, written on Note and Qiita. The articles are in Japanese.",
+    "noteLabel": "Note",
+    "qiitaLabel": "Qiita",
+    "noteLink": "All posts on Note",
+    "qiitaLink": "All posts on Qiita"
+  },
+  "about": {
+    "title": "About",
+    "lead": "I work as an IT engineer and make music, based in Kawasaki, Kanagawa.",
+    "p1": "I have spent about 13 years as an IT engineer, working on business systems and development infrastructure. In recent years I have been publishing the tools I build on GitHub.",
+    "p2": "Music started as a hobby, through piano and bass. Since 2026 I have been arranging and selling scores, handling everything from engraving to the performance videos.",
+    "p3": "This site exists to keep the things I publish in one place.",
+    "factsTitle": "At a glance",
+    "facts": {
+      "location": {
+        "label": "Based in",
+        "value": "Kawasaki, Kanagawa"
+      },
+      "work": {
+        "label": "Work",
+        "value": "IT engineer (13 years)"
+      },
+      "music": {
+        "label": "Music",
+        "value": "Score production and sales"
+      },
+      "tools": {
+        "label": "Tools",
+        "value": "Dorico / Python / TypeScript / Next.js"
+      }
     }
   },
   "contact": {
     "title": "Contact",
-    "desc": "For project consultations, music production requests, and other inquiries, please contact me here.",
-    "email": "Contact via direct email",
-    "note": "* This is currently a dummy link. Please replace it with a link to Google Forms, etc., as appropriate."
+    "description": "For work inquiries or questions about the scores, please reach me on X, GitHub, or Note.",
+    "x": "X DM",
+    "github": "GitHub",
+    "note": "Note"
+  },
+  "footer": {
+    "tagline": "Sheet music and software, kept in one place",
+    "linksTitle": "Links",
+    "design": "Design",
+    "designName": "AME-Design-Skills",
+    "copyright": "© 2026 AME"
   }
 }

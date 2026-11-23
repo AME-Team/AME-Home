@@ -1,25 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans:wght@400;500;700&family=Noto+Sans+Mono:wght@400;500&display=swap');
 @import 'tailwindcss';
 
+/* Tailwind v4 の dark: は既定で prefers-color-scheme を参照するため、
+   <html class="dark"> 連動に切り替える（AME-Design-Skills: ame-ui-philosophy §4.1）。 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a2e;
+  /* 1ポイントカラー: Trust Blue（ライト） */
+  --primary: #005b99;
+  --primary-hover: #004b7e;
+  --primary-subtle: #ebf4fa;
+  --primary-border: #99c7e8;
+  /* 塗りボタン用。白文字で AA（4.5:1）を満たす濃さにする */
+  --primary-solid: #005b99;
+  --primary-solid-hover: #004b7e;
+
+  /* フォント定義（ame-ui-typography §1） */
+  --font-ui-ja-sans: 'Noto Sans JP', sans-serif;
+  --font-ui-ja-serif: 'Noto Serif JP', serif;
+  --font-ui-en-sans: 'Noto Sans', sans-serif;
+  --font-ui-en-serif: 'Noto Serif', serif;
+  --font-mono-stack: 'Noto Sans Mono', 'Noto Sans JP', monospace;
+
+  --font-current-ui: var(--font-ui-ja-sans);
+}
+
+.dark {
+  /* 1ポイントカラー: Trust Blue（ダーク）
+     ame-ui-philosophy §4.2 の dark variant（#3B82C4）は gray-900 背景で 4.35:1 となり
+     通常テキストの AA（4.5:1）に届かないため、同節のコントラスト要件を優先して明るくする。 */
+  --primary: #5aa3e5;
+  --primary-hover: #7ab8ec;
+  --primary-subtle: rgb(59 130 196 / 0.15);
+  --primary-border: rgb(59 130 196 / 0.4);
+  /* 塗りボタンは白文字とのコントラストを優先して濃いめにする */
+  --primary-solid: #2f6fa8;
+  --primary-solid-hover: #255c8d;
+}
+
+html[lang='ja'] {
+  --font-current-ui: var(--font-ui-ja-sans);
+}
+
+html[lang='en'] {
+  --font-current-ui: var(--font-ui-en-sans);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-navy: #1a1a2e;
-  --color-navy-light: #16213e;
-  --color-accent: #0f3460;
-  --color-accent-hover: #0a2647;
-  --color-muted: #6b7280;
-  --color-section-alt: #f8f9fa;
-  --color-border: #e5e7eb;
-  --font-sans: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-primary-border: var(--primary-border);
+  --color-primary-solid: var(--primary-solid);
+  --color-primary-solid-hover: var(--primary-solid-hover);
+
+  --font-sans: var(--font-current-ui);
+  --font-mono: var(--font-mono-stack);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+@layer base {
+  body {
+    font-family: var(--font-current-ui);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :where(a, button, [tabindex]):focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--primary-subtle);
+  }
+}
+
+/* コード・URL など 1 バイト文字主体の表示用（ame-ui-typography §3） */
+.font-mono-code {
+  font-family: var(--font-mono-stack);
 }
